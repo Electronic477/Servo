@@ -1,0 +1,16 @@
+#include <Servo.h>
+Servo elservo;
+int pote = A5;
+int grado;
+
+void setup() {
+elservo.attach(6);
+}
+
+void loop() {
+grado = analogRead(pote);
+grado = map(grado, 0, 1023, 0, 180); 
+elservo.write(grado);
+delay(50);
+}
+
